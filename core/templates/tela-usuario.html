@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de usuário</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1 class="h1">Olá! Seja bem-vindo.</h1>
+        <div class="botao">
+            <button><a href="/">Sair</a></button>
+        </div>
+    </header>
+    <div id="container">
+        <div id="cadastro-empresa">
+            <div class="teste1">
+                <img src="../img/industry-icon.png" alt="">
+                <button><a href="/cadastro-empresa">Cadastrar empresa</a></button>
+            </div>
+        </div>
+
+        <div id="cadastro-produto">
+            <div class="teste1">
+                <img src="../img/Ecommerce-Product-icon.png" alt="">
+                <button><a href="/cadastro-produto">Cadastrar produto</a></button>
+            </div>
+        </div>
+
+        <div id="cadastro-clientes">
+            <div class="teste1">
+                <img src="../img/trash-icon.png" alt="">
+                <button><a href="#">Excluir Produto</a></button>
+            </div>
+        </div>
+
+        <div id="cadastro-clientes">
+            <div class="teste1">
+                <img src="../img/Arrow-icon.png" alt="">
+                <button><a href="">Transferir Produto</a></button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Lorem ipsum &copy; dolor sit.</p>
+    </footer>
+</body>
+</html>

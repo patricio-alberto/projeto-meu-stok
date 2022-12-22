@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Stok</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1 class="h1">Meu Stok</h1>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h1>Login</h1>
+
+            <form action="post">
+                <div class="label-float">
+                    <input type="email" id="email" placeholder="" value="{{ current_name }}" maxlength="100" required>
+                    <label for="email" name="usuario">Usuário</label>
+                </div>
+                <div class="label-float">
+                    <input type="password" id="senha" placeholder="" value="{{ current_name }}" maxlength="20" required>
+                    <label for="senha" name="senha">Senha</label>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </div>
+                <div class="justify-center">
+                    <button><a href="templates">Entrar</a></button>
+                </div>
+            </form>
+
+            <div>
+                <hr>
+            </div>
+
+            <p>Não tem uma conta? <a href="cadastro">Cadastre-se</a></p>
+
+        </div>
+    </div>
+    <footer>
+        <p>Lorem ipsum &copy dolor sit.</p>
+    </footer>
+    <script src="js/JavaScript.js"></script>
+</body>
+</html>

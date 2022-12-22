@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,400&family=Noto+Sans:wght@100&family=Oswald:wght@200;300&family=Roboto:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto";
+}
+
+body {
+    background-image: linear-gradient(to right, #F2CB05, #D9A404);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.card {
+    background-color: #0460D9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 1px 0px #00000070;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.label-float input {
+    width: 100%;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 2px solid blue;
+    background-color: transparent;
+    outline: none;
+    min-width: 180px;
+    font-size: 16px;
+    transition: all .3s ease-out;
+    border-radius: 0;
+}
+
+.label-float {
+    position: relative;
+    padding-top: 13px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.label-float input:focus {
+    border-bottom: 2px solid yellow;
+}
+
+.label-float label {
+    color: white;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all .3s ease-out;
+}
+
+.label-float input:focus + label,
+.label-float input:valid + label {
+    font-size: 13px;
+    margin-top: 0;
+    color: yellow;
+}
+
+button {
+    background-color: transparent;
+    border-color: #272262ce;
+    color: yellow;
+    padding: 8px 19px;
+    font-weight: bold;
+    font-size: 12pt;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #A65D03;
+    color: white;
+    transition: all .3s ease-out;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+hr {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    
+}
+
+p {
+    color: white;
+    font-size: 14pt;
+    text-align: center;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+
+a:hover {
+    color: yellow;
+    text-decoration: underline;
+    transition: all .3s ease-out;
+}
+
+.fa-eye {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+    color: yellow;
+}
+
+/* CSS Cadastro */
+
+.card-c {
+    background-color: #0460D9;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 1px 0px #00000070;
+    width: 400px;
+}
+
+#botao-cadastro {
+    text-decoration: none;
+}
+
+/* Tela do Usuário */
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.teste1 {
+    margin: 20px;
+    background-color: #0460D9;
+    padding: 50px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.h1 {
+    color: white;
+    text-align: center;
+    margin: 10px;
+    
+}
+
+.botao {
+    margin-left: 70%;
+    margin-top: -15px;
+    
+}
+
+header {
+    display: flex;
+    height: 10vh;
+    background-color: #0460D9;
+    align-items: center;
+}
+
+
+
+footer {
+    position: fixed;
+    background-color: #0460D9;
+    bottom: 0;
+    width: 100%;
+}
+
+img {
+    height: 50px;
+    width: 50px;
+    color: black;
+}
