@@ -18,18 +18,19 @@
         <div class="card">
             <h1>Login</h1>
 
-            <form action="post">
+            <form action="{% url 'inicio' %}" method="post">
+                {% csrf_token %}
                 <div class="label-float">
-                    <input type="email" id="email" placeholder="" value="{{ current_name }}" maxlength="100" required>
-                    <label for="email" name="usuario">Usuário</label>
+                    <input type="text" id="usuario" placeholder="Usuário" name="usuario" required>
+                    <label for="usuario" name="usuario">Usuário:</label>
                 </div>
                 <div class="label-float">
-                    <input type="password" id="senha" placeholder="" value="{{ current_name }}" maxlength="20" required>
-                    <label for="senha" name="senha">Senha</label>
+                    <input type="password" id="senha" placeholder="Senha" name="senha" required>
+                    <label for="senha" name="senha">Senha:</label>
                     <i class="fa fa-eye" aria-hidden="true"></i>
                 </div>
                 <div class="justify-center">
-                    <button><a href="templates">Entrar</a></button>
+                    <input  type="submit" value="Entrar">
                 </div>
             </form>
 
