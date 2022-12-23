@@ -17,29 +17,32 @@
         <div class="card-c">
             <h1>Empresa</h1>
 
+           <form  action="{% url 'cadastroempresa' %}" method="POST">
+            {% csrf_token %}
             <div class="label-float">
-                <input type="text" id="usuario" placeholder="" required>
-                <label for="usuario">Razão Social</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Nome da Empresa" required>
+                <label for="empresa">Razão Social</label>
             </div>
 
             <div class="label-float">
-                <input type="text" id="text" placeholder="" required>
+                <input type="text" id="text" name="cnpj" placeholder="" required>
                 <label for="text">CNPJ</label>
             </div>
 
             <div class="label-float">
-                <input type="text" id="usuario" placeholder="" required>
+                <input type="text" id="usuario" placeholder="" name="endereco" required>
                 <label for="usuario">Endereço</label>
             </div>
 
             <div class="label-float">
-                <input type="#" id="usuario" placeholder="" required>
+                <input type="#" id="usuario" placeholder="" name="cep" required>
                 <label for="usuario">CEP</label>
             </div>
 
             <div class="justify-center">
-                <button><a id="botao-cadastro" href="/templates">Finalizar</a></button>
+                <input type="submit" value="Finalizar">
             </div>
+        </form>
 
         </div>
     </div>
