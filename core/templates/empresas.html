@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4> Minhas Empresas </h4>
+
+        {%  if empresa %}
+                        {% for Empresa in empresa %}
+
+                            <p>Empresa: {{Empresa.razaosocial}}, CNPJ: {{Empresa.cnpj}} </p>
+
+      <br>
+
+                        {% endfor %}
+
+        {% else %}
+                <p>Não há vendas realizadas</p>
+
+        {% endif %}
+
+{% endblock %}

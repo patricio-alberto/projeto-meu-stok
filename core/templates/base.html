@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de usuário</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1 class="h1">Olá, {{ user.username }},  Seja bem-vindo!</h1>
+        {% if messages %}
+                    {% for m in messages %}
+                        <div class="alert alert-warning" role="alert">
+                        {{ m }}
+                        </div>
+                    {% endfor %}
+        {% endif %}
+
+        <button class="lado" ><a href="/">Sair</a></button>
+
+    </header>
+{% block content %}
+{% endblock %}
+<footer>
+        <p>Lorem ipsum &copy; dolor sit.</p>
+    </footer>
+</body>
+</html>
