@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -18,3 +19,4 @@ class CadastroEmpresa(models.Model):
     cnpj = models.CharField(max_length=15)
     endereco = models.CharField(max_length=30)
     cep = models.CharField(max_length=7)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
