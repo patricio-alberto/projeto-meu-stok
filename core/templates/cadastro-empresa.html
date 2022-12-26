@@ -38,10 +38,18 @@
                 <input type="#" id="usuario" placeholder="" name="cep" required>
                 <label for="usuario">CEP</label>
             </div>
+                <input type="hidden" value="{{ user.username }}" name="usu" required>
 
             <div class="justify-center">
                 <input type="submit" value="Finalizar">
             </div>
+               {% if messages %}
+                    {% for m in messages %}
+                        <div class="alert alert-warning" role="alert">
+                        {{ m }}
+                        </div>
+                    {% endfor %}
+               {% endif %}
         </form>
 
         </div>
