@@ -3,26 +3,31 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
-from django.shortcuts import render # Já tinha
+from django.shortcuts import render, redirect  # Já tinha
 from .forms import Login # Já tinha
 from django.contrib.auth.models import User
 from .models import CadastroEmpresa as cadempresa
+from django.contrib import messages
 
 
 def core(request):
-    if request.method == "GET":
-        return render(request, 'index.html')
+    if request.user.is_authenticated:
+        return redirect('templates')
     else:
-        username = request.POST.get('usuario')
-        senha = request.POST.get('senha')
-
-        user = authenticate(username=username, password=senha)
-
-        if user:
-            login(request, user)
-            return HttpResponse('Autenticado!')
+        if request.method == "GET":
+            return render(request, 'index.html')
         else:
-            return HttpResponse('Usuário ou senha inválido!')
+            username = request.POST.get('usuario')
+            senha = request.POST.get('senha')
+
+            user = authenticate(username=username, password=senha)
+
+            if user:
+                login(request, user)
+                return redirect('templates')
+            else:
+                messages.success(request, 'Usuário ou senha inválido!')
+                return redirect('inicio')
 
 
 @login_required
@@ -40,10 +45,12 @@ def Cadastro(request):
 
         user = User.objects.filter(username=username).first()
         if user:
-            return HttpResponse('Já existe um usuário cadastrado com esse nome.')
+            messages.success(request, 'Já existe um usuário cadastrado com esse nome.')
+            return redirect('cadastro')
         user = User.objects.create_user(username=username, email=email, password=senha)
         user.save()
-        return HttpResponse('Usuário cadastrado com sucesso!')
+        messages.success(request, 'Usuário cadastrado com sucesso!')
+        return redirect('inicio')
 
 
 @login_required
@@ -60,10 +67,15 @@ def CadastroEmpresa(request):
         cnpj = request.POST.get('cnpj')
         endereco = request.POST.get('endereco')
         cep = request.POST.get('cep')
+        usu = User.objects.get(id=request.user.id)
 
-        empresa = cadempresa.objects.create(razaosocial=rs, cnpj=cnpj, endereco=endereco, cep=cep)
-        empresa.save()
-        return HttpResponse('Empresa cadastrada com sucesso!')
+        empresa = cadempresa.objects.create(razaosocial=rs, cnpj=cnpj, endereco=endereco, cep=cep, user=usu)
+        if empresa:
+            empresa.save()
+            messages.success(request, 'Empresa cadastrada com sucesso!')
+            return redirect('templates')
+        else:
+            messages.success(request, 'Verifique o processo!')
 
 
 # def get_name(request):
@@ -72,11 +84,9 @@ def CadastroEmpresa(request):
 #         if form.is_valid():
 #             return HttpResponseRedirect('tela-usuario')
 # Create your views here.
-
-class CampoLogin(CreateView):
-    model = Login
-    fields = ['usuario', 'senha']
-    template_name = 'index.html'
-    success_url = reverse_lazy('templates/')
+@login_required
+def ListarEmpresa(request):
+    empresa = cadempresa.objects.filter(user=request.user.id)
+    return render(request, 'empresas.html', {'empresa': empresa})
 
 #class CampoCadastro(CreateView):
