@@ -27,12 +27,6 @@ body {
     box-shadow: 3px 3px 1px 0px #00000070;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: white;
-}
-
 .label-float input {
     width: 100%;
     padding: 5px 5px;
@@ -87,7 +81,6 @@ button {
     cursor: pointer;
     outline: none;
 }
-
 button:hover {
     background-color: #A65D03;
     color: white;
@@ -102,7 +95,7 @@ button:hover {
 hr {
     margin-top: 10%;
     margin-bottom: 10%;
-    
+
 }
 
 p {
@@ -167,23 +160,26 @@ a:hover {
     color: white;
     text-align: center;
     margin: 10px;
-    
+    margin-bottom: 20px;
 }
 
 .botao {
-    margin-left: 70%;
-    margin-top: -15px;
-    
+    margin-left: 0%;
+    margin-top: 0px;
 }
 
 header {
     display: flex;
     height: 10vh;
     background-color: #0460D9;
-    align-items: center;
+    position: relative;
 }
-
-
+.btn{
+    position: fixed;
+    right: 15px;
+    text-align: center;
+    z-index: 999;
+}
 
 footer {
     position: fixed;
